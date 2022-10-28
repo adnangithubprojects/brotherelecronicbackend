@@ -54,6 +54,18 @@ const CustomerSchema = mongoose.Schema(
     custstatus: {
       type: String,
     },
+    custRepeat: {
+      type: Number,
+    },
+    custRepeatGauranter: {
+      type: Number,
+    },
+    custPreviosAccount: {
+      type: Number,
+    },
+    accountNo: {
+      type: Number,
+    },
 
     // Product feilds
     instprice: {

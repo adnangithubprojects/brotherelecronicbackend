@@ -119,6 +119,6 @@ export const loginUser = async (req, res) => {
       status: "failed",
       message: error.message,
     });
-    console.log(error);
+    // console.log(error);
   }
 };

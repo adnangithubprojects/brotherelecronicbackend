@@ -13,6 +13,10 @@ export const postCustomer = async (req, res) => {
     custhomeAddress,
     custofficeAddres,
     custstatus,
+    custRepeat,
+    custRepeatGauranter,
+    custPreviosAccount,
+    accountNo,
 
     // Product Details
     instprice,
@@ -97,6 +101,10 @@ export const postCustomer = async (req, res) => {
       custhomeAddress,
       custofficeAddres,
       custstatus,
+      custRepeat,
+      custRepeatGauranter,
+      custPreviosAccount,
+      accountNo,
 
       // Product Details
       instprice,
@@ -241,6 +249,10 @@ export const updateCustomer = async (req, res) => {
     custhomeAddress,
     custofficeAddres,
     custstatus,
+    custRepeat,
+    custRepeatGauranter,
+    custPreviosAccount,
+    accountNo,
 
     // Product Details
     instprice,
