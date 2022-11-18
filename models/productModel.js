@@ -5,6 +5,12 @@ const productSchema = mongoose.Schema({
   pName: {
     type: String,
   },
+  custName: {
+    type: String,
+  },
+  shopName: {
+    type: String,
+  },
   netPrice: {
     type: Number,
   },

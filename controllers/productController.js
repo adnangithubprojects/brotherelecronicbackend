@@ -1,12 +1,14 @@
 import Product from "../models/productModel.js";
 
 export const postProduct = async (req, res) => {
-  const { pName, netPrice, instPrice } = req.body.body;
+  const { pName, custName, shopName, netPrice, instPrice } = req.body.body;
   const profit = instPrice - netPrice;
 
   try {
     const result = await Product.create({
       pName,
+      custName,
+      shopName,
       netPrice,
       instPrice,
       profit: profit,

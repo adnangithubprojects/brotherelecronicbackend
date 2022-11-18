@@ -81,10 +81,13 @@ export const postCustomer = async (req, res) => {
     g2officeAddres,
   } = req.body;
   // //  multiple input file
-  const custImage = req.files.custImage.map((it) => it.filename);
-  const custCnicImage = req.files.custCnicImage.map((it) => it.filename);
-  const gimage = req.files.gimage.map((it) => it.filename);
-  const g2image = req.files.g2image.map((it) => it.filename);
+  const custImage =
+    req.files.custImage?.map((custImage) => custImage.filename) || "";
+  const custCnicImage =
+    req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
+    "";
+  const gimage = req.files.gimage?.map((gimage) => gimage.filename) || "";
+  const g2image = req.files.g2image?.map((g2image) => g2image.filename) || "";
   try {
     const result = await Customer.create({
       // customer Info
@@ -234,8 +237,8 @@ export const deleteCustomer = async (req, res) => {
 export const updateCustomer = async (req, res) => {
   const id = req.params.id;
   const images = [];
-  req.files.inquiryImages.map((it) => {
-    return images.push(it.filename);
+  req.files.inquiryImages?.map((inquiryImages) => {
+    return images.push(inquiryImages.filename) || "";
   });
   const {
     cutomerName,
@@ -358,6 +361,10 @@ export const updateCustomer = async (req, res) => {
         custhomeAddress,
         custofficeAddres,
         custstatus,
+        custRepeat,
+        custRepeatGauranter,
+        custPreviosAccount,
+        accountNo,
 
         // Product Details
         instprice,
