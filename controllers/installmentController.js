@@ -89,6 +89,22 @@ export const getInstallment = async (req, res) => {
     });
   }
 };
+// user delete
+export const deleteInstallment = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const result = await Installment.findByIdAndDelete(id);
+    res.status(200).json({
+      status: "succes",
+      result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+};
 // export const getInstallment = async (req, res) => {
 //   const result = await Customer.find({ _id: req.params.customerId }).populate(
 //     "installments"
