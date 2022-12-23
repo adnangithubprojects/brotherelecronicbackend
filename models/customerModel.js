@@ -40,6 +40,10 @@ const CustomerSchema = mongoose.Schema(
       type: [Object],
       // required: [true, "CNIC image Required!"],
     },
+    custFingerImage: {
+      type: [Object],
+      // required: [true, "CNIC image Required!"],
+    },
     gender: {
       type: String,
     },

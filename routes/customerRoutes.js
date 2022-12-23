@@ -16,6 +16,7 @@ customer.post(
   uploadFile.fields([
     { name: "custImage", maxCount: 1 },
     { name: "custCnicImage", maxCount: 1 },
+    { name: "custFingerImage", maxCount: 1 },
     { name: "gimage", maxCount: 1 },
     { name: "g2image", maxCount: 1 },
   ]),

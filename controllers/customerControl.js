@@ -86,6 +86,10 @@ export const postCustomer = async (req, res) => {
   const custCnicImage =
     req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
     "";
+  const custFingerImage =
+    req.files.custFingerImage?.map(
+      (custFingerImage) => custFingerImage.filename
+    ) || "";
   const gimage = req.files.gimage?.map((gimage) => gimage.filename) || "";
   const g2image = req.files.g2image?.map((g2image) => g2image.filename) || "";
   try {
@@ -100,6 +104,7 @@ export const postCustomer = async (req, res) => {
       custCnic,
       custImage: custImage,
       custCnicImage: custCnicImage,
+      custFingerImage: custFingerImage,
       gender,
       custhomeAddress,
       custofficeAddres,
