@@ -86,6 +86,7 @@ export const postCustomer = async (req, res) => {
   const custImage =
     req.files.custImage?.map((custImage) => custImage.filename) || "";
     console.log(req.files.custImage)
+    Ccloudinary.v2.uploader.upload(req.files.custImage)
   const custCnicImage =
     req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
     "";
