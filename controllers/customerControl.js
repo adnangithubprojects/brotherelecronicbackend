@@ -1,5 +1,5 @@
 import Customer from "../models/customerModel.js";
-import  cloudinary from "cloudinary"
+// import  cloudinary from "cloudinary"
 
 export const postCustomer = async (req, res) => {
   const {
@@ -86,8 +86,8 @@ export const postCustomer = async (req, res) => {
   const custImage =
     req.files.custImage?.map((custImage) => custImage.filename) || "";
     console.log("ok")
-    console.log(req.files.custImage)
-    cloudinary.v2.uploader.upload(req.files.custImage)
+    // console.log(req.files.custImage)
+    // cloudinary.v2.uploader.upload(req.files.custImage)
   const custCnicImage =
     req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
     "";
