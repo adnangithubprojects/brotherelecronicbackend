@@ -1,4 +1,5 @@
 import Customer from "../models/customerModel.js";
+const Ccloudinary= require("cloudinary")
 
 export const postCustomer = async (req, res) => {
   const {
@@ -81,8 +82,10 @@ export const postCustomer = async (req, res) => {
     g2officeAddres,
   } = req.body;
   // //  multiple input file
+
   const custImage =
     req.files.custImage?.map((custImage) => custImage.filename) || "";
+    console.log(req.files.custImage)
   const custCnicImage =
     req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
     "";
