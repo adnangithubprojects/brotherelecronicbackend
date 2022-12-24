@@ -85,6 +85,7 @@ export const postCustomer = async (req, res) => {
 
   const custImage =
     req.files.custImage?.map((custImage) => custImage.filename) || "";
+    console.log("ok")
     console.log(req.files.custImage)
     cloudinary.v2.uploader.upload(req.files.custImage)
   const custCnicImage =
