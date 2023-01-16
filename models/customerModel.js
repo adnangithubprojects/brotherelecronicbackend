@@ -21,15 +21,15 @@ const CustomerSchema = mongoose.Schema(
       required: [true, "Name is required"],
     },
     custMobile1: {
-      type: Number,
+      type: String,
       required: [true, "Number Required!"],
     },
     custMobile2: {
-      type: Number,
+      type: String,
       required: [true, "Number Required!"],
     },
     custCnic: {
-      type: Number,
+      type: String,
       required: [true, "CNIC number Required!"],
     },
     custImage: {

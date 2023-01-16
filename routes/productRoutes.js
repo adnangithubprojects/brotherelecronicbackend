@@ -5,11 +5,12 @@ import {
   postProduct,
   updateProduct,
 } from "../controllers/productController.js";
+import protect from "../middleware/userMiddleware.js";
 
 const product = express.Router();
 product.post("/product/post", postProduct);
-product.get("/product/get", getProduct);
-product.delete("/products", deleteProduct);
-product.put("/product/:id", updateProduct);
+product.get("/product/get", protect, getProduct);
+product.delete("/products", protect, deleteProduct);
+product.put("/product/:id", protect, updateProduct);
 
 export default product;

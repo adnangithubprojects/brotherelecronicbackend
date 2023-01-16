@@ -1,7 +1,8 @@
 import Product from "../models/productModel.js";
 
 export const postProduct = async (req, res) => {
-  const { pName, custName, shopName, netPrice, instPrice } = req.body.body;
+  const { pName, custName, shopName, netPrice, instPrice, date } =
+    req.body.body;
   const profit = instPrice - netPrice;
 
   try {
@@ -11,6 +12,7 @@ export const postProduct = async (req, res) => {
       shopName,
       netPrice,
       instPrice,
+      date,
       profit: profit,
     });
     res.status(200).json({

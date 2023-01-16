@@ -21,6 +21,9 @@ const productSchema = mongoose.Schema({
   profit: {
     type: Number,
   },
+  date: {
+    type: String,
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);

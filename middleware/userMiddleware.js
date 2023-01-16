@@ -5,15 +5,17 @@ const protect = (req, res, next) => {
   try {
     if (!token) {
       res.json({
-        message: "Token required",
+        message: "authorization required",
       });
     }
-    const verifyToken = jwt.verify(token, "key");
+    const verifyToken = jwt.verify(token, process.env.SECRETE_KEY);
     if (verifyToken) {
       next();
     }
   } catch (error) {
-    console.log(error);
+    res.json({
+      message: error.message,
+    });
   }
 };
 export default protect;

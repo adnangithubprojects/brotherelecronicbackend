@@ -85,9 +85,9 @@ export const postCustomer = async (req, res) => {
 
   const custImage =
     req.files.custImage?.map((custImage) => custImage.filename) || "";
-    console.log("ok")
-    // console.log(req.files.custImage)
-    // cloudinary.v2.uploader.upload(req.files.custImage)
+  console.log("ok");
+  console.log(req.files.custImage, "custImage");
+  // cloudinary.v2.uploader.upload(req.files.custImage)
   const custCnicImage =
     req.files.custCnicImage?.map((custCnicImage) => custCnicImage.filename) ||
     "";
@@ -250,6 +250,7 @@ export const updateCustomer = async (req, res) => {
   req.files.inquiryImages?.map((inquiryImages) => {
     return images.push(inquiryImages.filename) || "";
   });
+
   const {
     cutomerName,
     custFName,
